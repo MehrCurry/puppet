@@ -18,12 +18,20 @@ class autofs {
 
 	file { '/etc/auto.master':
 		ensure => present,
-		source => 'puppet:///modules/autofs/auto.master'
+		source => 'puppet:///modules/autofs/auto.master',
+		owner => root,                                                                                                                
+        	group => root,
+		mode => 644,                                                                                                                
+        	notify => Service[autofs]    
 	}
 
 	file { '/etc/auto.nas':
                 ensure => present,
-                source => 'puppet:///modules/autofs/auto.nas'
+                source => 'puppet:///modules/autofs/auto.nas',
+                owner => root,                                      
+                group => root,                                    
+                mode => 644,
+                notify => Service[autofs]
         }
 
 
