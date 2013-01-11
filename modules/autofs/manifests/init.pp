@@ -4,7 +4,7 @@ class autofs {
     		ensure => "latest"
 	}
 
-	service { "rpcbin":
+	service { "rpcbind":
 		ensure => "running",
 		enable => true
 	}
