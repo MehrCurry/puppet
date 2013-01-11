@@ -15,4 +15,16 @@ class autofs {
         hasrestart => true,
         hasstatus  => true,
     }
+
+	file { '/etc/auto.master':
+		ensure => present,
+		source => 'puppet:///modules/autofs/auto.master'
+	}
+
+	file { '/etc/auto.nas':
+                ensure => present,
+                source => 'puppet:///modules/autofs/auto.nas'
+        }
+
+
 }

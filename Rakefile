@@ -7,7 +7,7 @@ sh "#{SSH} #{USER}@#{CLIENT} 'cd /etc/puppet && sudo git pull'"
 end
 
 task :apply => [:deploy] do
-sh "#{SSH} #{USER}@#{CLIENT} 'sudo puppet apply /etc/puppet/manifests/site.pp'" do |ok, status|
+sh "#{SSH} #{USER}@#{CLIENT} 'sudo puppet apply -v --modulepath /etc/puppet/modules /etc/puppet/manifests/site.pp'" do |ok, status|
 puts case status.exitstatus
 when 0 then 'Client is up to date.'
 when 1 then 'Puppet could not compile manifest.'
@@ -19,6 +19,6 @@ end
 
 
 task :noop => [:deploy] do
-sh "#{SSH} #{USER}@#{CLIENT} 'sudo puppet apply --noop /etc/puppet/manifests/site.pp'"
+sh "#{SSH} #{USER}@#{CLIENT} 'sudo puppet apply --noop --modulepath /etc/puppet/modules /etc/puppet/manifests/site.pp'"
 end
 
