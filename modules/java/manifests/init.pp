@@ -1,3 +1,4 @@
+class 'java' {
 package { 'openjdk-7-jdk':
 	ensure => 'installed'
 }
@@ -5,5 +6,6 @@ package { 'openjdk-7-jdk':
 package { 'maven':
 	ensure => 'installed',
 	require => 'openjdk-7-jdk'
+}
 }
 
