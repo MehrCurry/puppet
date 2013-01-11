@@ -16,3 +16,9 @@ when 3 then 'Puppet found errors'
 end
 end 
 end
+
+
+task :noop => [:deploy] do
+sh "#{SSH} #{USER}@#{CLIENT} 'sudo puppet apply --noop /etc/puppet/manifests/site.pp'"
+end
+
