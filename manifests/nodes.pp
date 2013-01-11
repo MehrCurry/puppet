@@ -3,7 +3,9 @@ node default {
 }
 
 node raspberry-base inherits default {
-       package { "git":
+	include 'java'
+
+        package { "git":
                 ensure => "latest"
         }
 
