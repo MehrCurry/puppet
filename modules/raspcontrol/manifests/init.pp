@@ -12,6 +12,5 @@ class raspcontrol {
 
   service { 'raspcontrol':
     ensure => running,
-    enabled => true
   }
 }
