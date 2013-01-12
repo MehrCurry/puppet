@@ -1,6 +1,6 @@
 # Installs latest raspcontrol from github
 class raspcontrol {
-  excc { 'git checkout':
+  exec { 'git checkout':
     command => 'cd /opt && git clone https://github.com/Bioshox/Raspcontrol.git',
     path => '/bin:/usr/bin',
     require => Package['php5-cli','git']
