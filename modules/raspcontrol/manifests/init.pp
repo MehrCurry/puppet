@@ -1,5 +1,5 @@
 # Installs latest raspcontrol from github
-class rapscontrol {
+class raspcontrol {
   excc { 'git checkout':
     command => 'cd /opt && git clone https://github.com/Bioshox/Raspcontrol.git',
     path => '/bin:/usr/bin',
