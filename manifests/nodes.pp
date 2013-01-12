@@ -9,14 +9,15 @@ node raspberry-base inherits default {
   package { $basepackages:
                 ensure => latest
   }
+
+  include 'raspcontrol'
+  include 'autofs'
 }
 
 
 node raspi1 inherits raspberry-base {
-  include autofs
 }
 
 node raspi2 inherits raspberry-base {
-  include autofs
 }
 
