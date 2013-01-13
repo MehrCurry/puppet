@@ -5,7 +5,7 @@ node default {
 node raspberry-base inherits default {
   include 'java'
 
-  $basepackages = ['git','htop','rsync','php5-cli','mercurial','svn']
+  $basepackages = ['git','htop','rsync','php5-cli','mercurial','subversion']
   package { $basepackages:
                 ensure => latest
   }
