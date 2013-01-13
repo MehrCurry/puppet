@@ -16,7 +16,7 @@ node raspberry-base inherits default {
 
 
 node raspi1 inherits raspberry-base {
-  package { 'librxtxjava':
+  package { 'librxtx-java':
     ensure => installed
   }
 }
