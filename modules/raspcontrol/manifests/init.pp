@@ -3,7 +3,8 @@ class raspcontrol {
   exec { 'git checkout':
     command => 'git clone https://github.com/Bioshox/Raspcontrol.git /opt/Raspcontrol',
     path => '/bin:/usr/bin',
-    require => Package['php5-cli','git']
+    require => Package['php5-cli','git'],
+    unless => "[ -d '/opt/Raspcontrol' ]"
   }
 
   file { '/etc/init.d/raspcontol':
