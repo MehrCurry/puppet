@@ -4,10 +4,10 @@ class rt8188cus {
   }
 
   file { '/etc/network/interfaces.dist':
-    source => 'puppet:///modules/8818cus/interfaces'
+    source => 'puppet:///modules/rt8818cus/interfaces'
   }
 
   file { '/etc/wpa_supplicant/wpa_supplicant.conf.tmpl':
-    source => 'puppet:///modules/8818cus/wpa_supplicant.conf.tmpl'
+    source => 'puppet:///modules/rt8818cus/wpa_supplicant.conf.tmpl'
   }
 }
