@@ -9,4 +9,5 @@ class rt8188cus {
 
   file { '/etc/wpa_supplicant/wpa_supplicant.conf.tmpl':
     source => 'puppet:///modules/8818cus/wpa_supplicant.conf.tmpl'
+  }
 }
